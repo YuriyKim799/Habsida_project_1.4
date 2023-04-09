@@ -99,8 +99,39 @@ body {
   border: 1px solid transparent;
   cursor: pointer;
   transition: all 0.5s;
+  position: relative;
 }
 
+.nav-buttons__sidebar-search-btn:before,
+.nav-buttons__sidebar-search-btn:after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000);
+  background-size: 500%;
+  z-index: -1;
+  animation: amimate 30s ease infinite;
+  border-radius: 50%;
+}
+
+.nav-buttons__sidebar-search-btn:after {
+  filter: blur(20px);
+}
+
+@keyframes amimate {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 300% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
 .nav-buttons__list-item svg {
   transition: all 0.5s;
 }
